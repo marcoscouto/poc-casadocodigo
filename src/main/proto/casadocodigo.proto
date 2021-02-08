@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.poc";
+option java_outer_classname = "Casadocodigo";
+option objc_class_prefix = "HLW";
+
+package com.poc;
+
+service CasadocodigoService {
+  rpc send (CasadocodigoRequest) returns (CasadocodigoReply) {}
+}
+
+message CasadocodigoRequest {
+  string name = 1;
+}
+
+message CasadocodigoReply {
+  string message = 1;
+}
