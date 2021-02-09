@@ -1,12 +1,11 @@
 package com.poc.write.application
 
-import com.nhaarman.mockitokotlin2.any
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.verify
+import com.nhaarman.mockitokotlin2.*
 import com.poc.write.application.domain.Author
 import com.poc.write.application.domain.AuthorRepository
 import com.poc.write.application.service.CreateAuthorCommand
 import com.poc.write.application.service.CreateAuthorHandler
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 class CreateAuthorHandlerTest {
@@ -27,7 +26,11 @@ class CreateAuthorHandlerTest {
         handler.handle(command)
 
         // then
-        verify(repository).create(any<Author>())
+        argumentCaptor<Author>().apply {
+            verify(repository).create(capture())
+            Assertions.assertEquals(name, firstValue.name)
+            Assertions.assertEquals(email, firstValue.email)
+            Assertions.assertEquals(description, firstValue.description)
+        }
     }
-
 }
