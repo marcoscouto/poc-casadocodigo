@@ -1,8 +1,8 @@
 package com.poc.write.application
 
 import com.nhaarman.mockitokotlin2.*
+import com.poc.write.adapter.out.AuthorRepository
 import com.poc.write.application.domain.Author
-import com.poc.write.application.domain.AuthorRepository
 import com.poc.write.application.service.CreateAuthorCommand
 import com.poc.write.application.service.CreateAuthorHandler
 import org.junit.jupiter.api.Assertions
@@ -27,7 +27,7 @@ class CreateAuthorHandlerTest {
 
         // then
         argumentCaptor<Author>().apply {
-            verify(repository).create(capture())
+            verify(repository).save(capture())
             Assertions.assertEquals(name, firstValue.name)
             Assertions.assertEquals(email, firstValue.email)
             Assertions.assertEquals(description, firstValue.description)
