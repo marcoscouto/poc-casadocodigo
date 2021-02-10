@@ -1,8 +1,10 @@
-package com.poc.write.application.service
+package com.poc.casadocodigo.write.application.service
 
-import com.poc.write.adapter.out.AuthorRepository
-import com.poc.write.application.domain.Author
+import com.poc.casadocodigo.write.adapter.out.AuthorRepository
+import com.poc.casadocodigo.write.application.domain.Author
+import javax.inject.Singleton
 
+@Singleton
 class CreateAuthorHandler(private val repository: AuthorRepository) {
 
     fun handle(command: CreateAuthorCommand) {

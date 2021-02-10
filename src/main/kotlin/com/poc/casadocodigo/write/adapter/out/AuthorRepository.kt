@@ -1,6 +1,6 @@
-package com.poc.write.adapter.out
+package com.poc.casadocodigo.write.adapter.out
 
-import com.poc.write.application.domain.Author
+import com.poc.casadocodigo.write.application.domain.Author
 import io.micronaut.data.annotation.Repository
 import io.micronaut.data.repository.CrudRepository
 

@@ -1,4 +1,4 @@
-package com.poc.write.application.domain
+package com.poc.casadocodigo.write.application.domain
 
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue

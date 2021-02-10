@@ -1,20 +1,17 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.poc";
-option java_outer_classname = "Casadocodigo";
-option objc_class_prefix = "HLW";
+option java_package = "com.poc.casadocodigo.proto";
+import "google/protobuf/empty.proto";
 
-package com.poc;
+package com.poc.casadocodigo.proto;
 
-service CasadocodigoService {
-  rpc send (CasadocodigoRequest) returns (CasadocodigoReply) {}
+service CasadoCodigoService {
+  rpc createAuthor (CreateAuthorRequest) returns (google.protobuf.Empty) {}
 }
 
-message CasadocodigoRequest {
+message CreateAuthorRequest {
   string name = 1;
-}
-
-message CasadocodigoReply {
-  string message = 1;
+  string email = 2;
+  string description = 3;
 }

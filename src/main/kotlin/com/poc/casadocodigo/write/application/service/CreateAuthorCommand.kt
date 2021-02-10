@@ -1,4 +1,4 @@
-package com.poc.write.application.service
+package com.poc.casadocodigo.write.application.service
 
 data class CreateAuthorCommand(val name: String,
                                val email: String,
