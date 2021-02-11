@@ -7,7 +7,7 @@ import "google/protobuf/empty.proto";
 package com.poc.casadocodigo.proto;
 
 service CasadoCodigoService {
-  rpc createAuthor (CreateAuthorRequest) returns (google.protobuf.Empty) {}
+  rpc CreateAuthor (CreateAuthorRequest) returns (google.protobuf.Empty) {}
 }
 
 message CreateAuthorRequest {
