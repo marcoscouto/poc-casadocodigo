@@ -8,6 +8,6 @@ import javax.persistence.Id
 data class Category(
     @Id
     @GeneratedValue
-    var id: Long?,
+    var id: Long? = null,
     val name: String
 )
