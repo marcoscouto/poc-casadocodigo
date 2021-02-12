@@ -6,12 +6,10 @@ import "google/protobuf/empty.proto";
 
 package com.poc.casadocodigo.proto;
 
-service CasadoCodigoService {
-  rpc CreateAuthor (CreateAuthorRequest) returns (google.protobuf.Empty) {}
+service CategoryService {
+  rpc CreateCategory (CreateCategoryRequest) returns (google.protobuf.Empty) {}
 }
 
-message CreateAuthorRequest {
+message CreateCategoryRequest {
   string name = 1;
-  string email = 2;
-  string description = 3;
 }
