@@ -5,6 +5,7 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.poc.casadocodigo.write.adapter.out.AuthorRepository
 import com.poc.casadocodigo.write.application.domain.Author
+import io.micronaut.validation.validator.Validator
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
@@ -22,7 +23,7 @@ class CreateAuthorHandlerTest {
         val repository = mock<AuthorRepository>()
 
         // when
-        val handler = CreateAuthorHandler(repository)
+        val handler = CreateAuthorHandler(repository, Validator.getInstance())
         handler.handle(command)
 
         // then

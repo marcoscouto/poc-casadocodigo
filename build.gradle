@@ -27,6 +27,7 @@ micronaut {
 dependencies {
     kapt("io.micronaut.data:micronaut-data-processor")
     implementation("io.micronaut:micronaut-validation")
+    implementation("io.micronaut.beanvalidation:micronaut-hibernate-validator")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")

@@ -9,19 +9,17 @@ import javax.inject.Singleton
 
 @Singleton
 class AuthorEndpoint(
-    private val handler: CreateAuthorHandler
+        private val handler: CreateAuthorHandler
 ) : CasadoCodigoServiceCoroutineImplBase() {
 
     override suspend fun createAuthor(request: CreateAuthorRequest): Empty {
 
         val command = CreateAuthorCommand(
-            request.name,
-            request.email,
-            request.description
+                request.name,
+                request.email,
+                request.description
         )
-
         handler.handle(command)
-
-        return Empty.newBuilder().build();
+        return Empty.getDefaultInstance()
     }
 }
